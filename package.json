@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint  --dir src",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "lint": "next lint --dir src",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,html,md}": "eslint --config .eslintrc.js",
+    "src/**/*.{ts,tsx,js,json,html,yml,css,less,md}": "prettier --write"
   },
   "dependencies": {
+    "eslint-define-config": "^2.0.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
@@ -21,6 +27,10 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "postcss": "^8",
     "prettier": "3.1.1",
     "tailwindcss": "^3.3.0",
